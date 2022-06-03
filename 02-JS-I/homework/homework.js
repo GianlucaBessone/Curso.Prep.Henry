@@ -140,7 +140,8 @@ function elevarAlCuadrado(num) {
   // Devuelve el valor de "num" elevado al cuadrado
   // ojo: No es raiz cuadrada!
   // Tu código:
-  let value = num * num;
+  //let value = num * num;
+  let value = Math.pow(num, 2);
   return value;
 }
 
@@ -148,33 +149,41 @@ function elevarAlCubo(num) {
   // Devuelve el valor de "num" elevado al cubo
   // Tu código:
   // Tu código:
-  let value = num * (num * num);
+  //let value = num * (num * num);
+  let value = Math.pow(num, 3);
   return value;
 }
 
 function elevar(num, exponent) {
   // Devuelve el valor de "num" elevado al exponente dado en "exponent"
   // Tu código:
-  let numero = num;
-  for (i = num; i <= exponent; i++) {
-    num = numero * num;
-  }
-  return num;
+  //let numero = num;
+  //for (i = num; i <= exponent; i++) {
+  //  num = numero * num;
+  //}
+  let value = Math.pow(num, exponent);
+  return value;
 }
 
 function redondearNumero(num) {
   // Redondea "num" al entero más próximo y devuélvelo
   // Tu código:
+  let value = Math.round(num);
+  return value;
 }
 
 function redondearHaciaArriba(num) {
   // Redondea "num" hacia arriba (al próximo entero) y devuélvelo
   // Tu código:
+  let value = Math.ceil(num);
+  return value;
 }
 
 function numeroRandom() {
   //Generar un número al azar entre 0 y 1 y devolverlo
   //Pista: investigá qué hace el método Math.random()
+  let value = Math.random();
+  return value;
 }
 
 function esPositivo(numero) {
@@ -182,45 +191,67 @@ function esPositivo(numero) {
   //Si el número es positivo, devolver ---> "Es positivo"
   //Si el número es negativo, devolver ---> "Es negativo"
   //Si el número es 0, devuelve false
+  let value = Math.sign(numero);
+  if (value === 1) {
+    return "Es positivo";
+  } else if (value === -1) {
+    return "Es negativo";
+  } else if (value === 0) {
+    return false;
+  }
 }
 
 function agregarSimboloExclamacion(str) {
   // Agrega un símbolo de exclamación al final de la string "str" y devuelve una nueva string
   // Ejemplo: "hello world" pasaría a ser "hello world!"
   // Tu código:
+  exclama = str + "!";
+  return exclama;
 }
 
 function combinarNombres(nombre, apellido) {
   // Devuelve "nombre" y "apellido" combinados en una string y separados por un espacio.
   // Ejemplo: "Soy", "Henry" -> "Soy Henry"
   // Tu código:
+  quienSoy = nombre + " " + apellido;
+  return quienSoy;
 }
 
 function obtenerSaludo(nombre) {
   // Toma la string "nombre" y concatena otras string en la cadena para que tome la siguiente forma:
   // "Martin" -> "Hola Martin!"
   // Tu código:
+  saludo = "Hola " + nombre + "!";
+  return saludo;
 }
 
 function obtenerAreaRectangulo(alto, ancho) {
   // Retornar el area de un rectángulo teniendo su altura y ancho
   // Tu código:
+  areaRectangulo = alto * ancho;
+  return areaRectangulo;
 }
 
 function retornarPerimetro(lado) {
   //Escibe una función a la cual reciba el valor del lado de un cuadrado y retorne su perímetro.
   //Escribe tu código aquí
+  perimetroCuadrado = lado * 4;
+  return perimetroCuadrado;
 }
 
 function areaDelTriangulo(base, altura) {
   //Desarrolle una función que calcule el área de un triángulo.
   //Escribe tu código aquí
+  areaTriangulo = (altura / 2) * base;
+  return areaTriangulo;
 }
 
 function deEuroAdolar(euro) {
   //Supongamos que 1 euro equivale a 1.20 dólares. Escribe un programa que reciba
   //como parámetro un número de euros y calcule el cambio en dólares.
   //Escribe tu código aquí
+  conversion = euro * 1.2;
+  return conversion;
 }
 
 function esVocal(letra) {
@@ -229,6 +260,20 @@ function esVocal(letra) {
   //que no se puede procesar el dato mediante el mensaje "Dato incorrecto".
   // Si no es vocal, tambien debe devolver "Dato incorrecto".
   //Escribe tu código aquí
+  if (letra.length > 1) {
+    return "Dato incorrecto";
+  } else if (letra.length === 1) {
+    switch (letra) {
+      case "a":
+      case "e":
+      case "i":
+      case "o":
+      case "u":
+        return "Es vocal";
+      default:
+        return "Dato incorrecto";
+    }
+  }
 }
 
 // No modificar nada debajo de esta línea
