@@ -40,6 +40,13 @@ function capToFront(s) {
   //al principio de la palabra.
   //Ejemplo: soyHENRY -> HENRYsoy
   //Escribe tu código aquí
+  min = [];
+  may = [];
+  const splitered = s.split("");
+  const mayToFront = splitered.map((v) => {
+    v === v.toUpperCase() ? may.push(v) : min.push(v);
+  });
+  return may.join("") + min.join("");
 }
 
 function asAmirror(str) {
