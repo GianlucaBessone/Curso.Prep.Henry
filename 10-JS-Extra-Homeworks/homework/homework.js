@@ -55,6 +55,16 @@ function asAmirror(str) {
   //pero con cada una de sus palabras invertidas, como si fuera un espejo.
   //Ej: Recibe ---> "The Henry Challenge is close!" || Devuelve ---> "ehT yrneH egnellahC si !esolc"
   //Escribe tu código aquí
+  arr = str.split(" ");
+  mirror = [];
+  asReverse = arr.map(function (x) {
+    a = x.split("").reverse();
+    a = a.join("");
+    mirror.push(a);
+    return mirror;
+  });
+  asReverse = mirror.join(" ");
+  return asReverse;
 }
 
 function capicua(numero) {
@@ -62,6 +72,21 @@ function capicua(numero) {
   //La misma debe retornar: "Es capicua" si el número se número que se lee igual de
   //izquierda a derecha que de derecha a izquierda. Caso contrario retorna "No es capicua"
   //Escribe tu código aquí
+  numStr = numero.toString();
+  arr = numStr.split(" ");
+  mirror = [];
+  asReverse = arr.map(function (x) {
+    a = x.split("").reverse();
+    a = a.join("");
+    mirror.push(a);
+    return mirror;
+  });
+  mirror = mirror.join(" ");
+  if (mirror == numero) {
+    return "Es capicua";
+  } else if (mirror != numero) {
+    return "No es capicua";
+  }
 }
 
 function deleteAbc(cadena) {

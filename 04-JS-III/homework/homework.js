@@ -245,15 +245,15 @@ function continueStatement(numero) {
   //Pista: usá el statement 'continue'
   // Tu código:
 
-  var valore = [];
+  var value = [];
   for (i = 0; i < 10; i++) {
     if (5 === i) {
       continue;
     }
     numero = numero + 2;
-    valore.push(numero);
+    value.push(numero);
   }
-  return valore;
+  return value;
 }
 
 // No modificar nada debajo de esta línea
