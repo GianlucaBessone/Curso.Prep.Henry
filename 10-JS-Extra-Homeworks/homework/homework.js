@@ -11,9 +11,6 @@ function deObjetoAmatriz(objeto) {
     }) ➞ [["D", 1], ["B", 2], ["C", 3]]*/
   //Escribe tu código aquí
 
-  // let result = Object.keys(objeto).map(function (key) {
-  //   return [key, objeto[key]];
-  // });
   let result = Object.entries(objeto);
 
   return result;
@@ -93,12 +90,32 @@ function deleteAbc(cadena) {
   //Define una función que elimine las letras "a", "b" y "c" de la cadena dada
   //y devuelva la versión modificada o la misma cadena, en caso de contener dichas letras.
   //Escribe tu código aquí
+const str = cadena.split("")
+let cleanStr = [];
+deleteAbc = str.map(function(x){
+  cleanStr.push(x)
+  if(x === "a"||x ==="b"||x ==="c"){
+    cleanStr.pop()
+  }
+})
+
+const clean = cleanStr.join("")
+if(clean === cadena){
+  return cadena;
+} else if (clean !== cadena){
+  return clean;
+}
+
 }
 
 function sortArray(arr) {
   //La función recibe una matriz de strings. Ordena la matriz en orden creciente de longitudes de cadena
   //Ej: Recibe ---> ["You", "are", "beautiful", "looking"] || Devuelve ---> [“You", "are", "looking", "beautiful"]
-  //Escribe tu código aquí
+  //Escribe tu código aquí.
+  orderArr = arr.sort(function(a,b){
+    return a.length - b.length
+  })
+return orderArr;
 }
 
 function buscoInterseccion(arreglo1, arreglo2) {
@@ -107,6 +124,17 @@ function buscoInterseccion(arreglo1, arreglo2) {
   //Si no tienen elementos en común, retornar un arreglo vacío.
   //Aclaración: los arreglos no necesariamente tienen la misma longitud
   //Escribe tu código aquí
+  equal=[];
+ 
+  
+  for(i=0;i<arreglo1.length;i++){
+    for(j=0; j<arreglo2.length;j++){
+      if(arreglo1[i] === arreglo2[j]){
+        equal.push(arreglo1[i])
+      }
+    }
+  }
+  return equal;
 }
 
 // No modificar nada debajo de esta línea
